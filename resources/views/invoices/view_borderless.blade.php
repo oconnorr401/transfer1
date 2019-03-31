@@ -1,5 +1,7 @@
 @extends('master')
 
+@yield('title', 'MyInvoice')
+
 @section('head')
 	@parent
 

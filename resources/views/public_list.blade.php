@@ -1,5 +1,7 @@
 @extends('public.header')
 
+@section('title', 'Quotes|Invoices|Payments')
+
 @section('content')
 
 	<style type="text/css">

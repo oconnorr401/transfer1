@@ -1,5 +1,7 @@
 @extends('public.header')
 
+@section('title', 'MyInvoices')
+
 @section('head')
 	@parent
 

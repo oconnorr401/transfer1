@@ -1,5 +1,7 @@
 @extends('public.header')
 
+@section('title', 'MyDashboard')
+
 @section('head')
     @parent
 
@@ -363,46 +365,46 @@
 
         <br/>
 
-        <div class="row" id="account-row">
-            <div class="col-md-2 invoices-from">
-                {{trans('texts.invoice_from')}}
-            </div>
-            <div class="col-md-4 logo">
-                @if ($account->hasLogo())
-                    {!! HTML::image($account->getLogoURL()) !!}
-                @else
-                    <h2>{{ $account->name}}</h2>
-                @endif
-            </div>
-            <div class="col-md-3 address-details">
-                @if ($account->address1)
-                    {{ $account->address1 }}<br/>
-                @endif
-                @if ($account->address2)
-                    {{ $account->address2 }}<br/>
-                @endif
-                @if ($account->getCityState())
-                    {{ $account->getCityState() }}<br/>
-                @endif
-                @if ($account->country)
-                    {{ $account->country->getName() }}
-                @endif
-            </div>
-            <div class="col-md-3 phone-web-details">
-                <div class="inner">
-                    @if ($account->work_phone)
-                        {{ $account->work_phone }}<br/>
-                    @endif
-                    @if ($account->website)
-                        <a href="{{ Utils::addHttp($account->website) }}" target="_blank">{{ $account->website }}</a>
-                        <br/>
-                    @endif
-                    @if ($account->work_email)
-                        {!! HTML::mailto($account->work_email, $account->work_email) !!}<br/>
-                    @endif
-                </div>
-            </div>
-        </div>
+        {{--<div class="row" id="account-row">--}}
+            {{--<div class="col-md-2 invoices-from">--}}
+                {{--{{trans('texts.invoice_from')}}--}}
+            {{--</div>--}}
+            {{--<div class="col-md-4 logo">--}}
+                {{--@if ($account->hasLogo())--}}
+                    {{--{!! HTML::image($account->getLogoURL()) !!}--}}
+                {{--@else--}}
+                    {{--<h2>{{ $account->name}}</h2>--}}
+                {{--@endif--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 address-details">--}}
+                {{--@if ($account->address1)--}}
+                    {{--{{ $account->address1 }}<br/>--}}
+                {{--@endif--}}
+                {{--@if ($account->address2)--}}
+                    {{--{{ $account->address2 }}<br/>--}}
+                {{--@endif--}}
+                {{--@if ($account->getCityState())--}}
+                    {{--{{ $account->getCityState() }}<br/>--}}
+                {{--@endif--}}
+                {{--@if ($account->country)--}}
+                    {{--{{ $account->country->getName() }}--}}
+                {{--@endif--}}
+            {{--</div>--}}
+            {{--<div class="col-md-3 phone-web-details">--}}
+                {{--<div class="inner">--}}
+                    {{--@if ($account->work_phone)--}}
+                        {{--{{ $account->work_phone }}<br/>--}}
+                    {{--@endif--}}
+                    {{--@if ($account->website)--}}
+                        {{--<a href="{{ Utils::addHttp($account->website) }}" target="_blank">{{ $account->website }}</a>--}}
+                        {{--<br/>--}}
+                    {{--@endif--}}
+                    {{--@if ($account->work_email)--}}
+                        {{--{!! HTML::mailto($account->work_email, $account->work_email) !!}<br/>--}}
+                    {{--@endif--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
 
         <p>&nbsp;</p>
 
